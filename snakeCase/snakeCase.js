@@ -4,14 +4,14 @@ let resultString = string.replace(/\../g, " "); //specify that the dots are what
 
 //deal with camelcase
 if (resultString.indexOf(" ") < 0) {
-	resultString = string.replace(/[A-Z]/g, " $&");
+	resultString = string.replace(/[A-Z]/g, " $&"); // $& here means that it should include whatever was captured in the regular expression search
 }
 
 return resultString
 	.trim()
 	.toLowerCase()
-	.replace(/[^a-z -]/g, "")
-	.replace(/[ -]/g, "_");
+	.replace(/[^a-z -]/g, "") 
+	.replace(/[ -]/g, "_"); // The empty space in both Regular expressions inside the replace methods is actually used as a character to search for
 }
 
 module.exports = snakeCase
